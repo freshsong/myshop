@@ -1,0 +1,17 @@
+{
+    "newlist": [
+        {"num":1, "title":"black label","txt":"프리미엄 라인, 블랙라벨", "img":"./images/pd/001.jpg"},
+        {"num":2, "title":"new hotdeal","txt":"뉴핫딜 입니다", "img":"../images/pd/002.jpg"},
+        {"num":3, "title":"office look","txt":"오피스룩을 이렇게 근사하게 입는다구요?", "img":"./images/pd/003.jpg"},
+        {"num":4, "title":"outer","txt":"여름빼고 아우터를 입는데 말이에요", "img":"./images/pd/004.jpg"},
+        {"num":5, "title":"pants","txt":"바지는 너무끼면 여자 가랑이에 안좋아요", "img":"./images/pd/005.jpg"},
+        {"num":6, "title":"slacks","txt":"단정한 슬렉스는 보기에도 좋아요", "img":"./images/pd/006.jpg"},
+        {"num":7, "title":"dress","txt":"풍성한 라인의 드레스가 필요하다고?", "img":"./images/pd/007.jpg"},
+        {"num":8, "title":"accessories","txt":"옷에 알맞는 악세사리를 착용해요", "img":"./images/pd/008.jpg"},
+        {"num":9, "title":"black label","txt":"블랙라벨 브랜드", "img":"./images/pd/009.jpg"},
+        {"num":10, "title":"hot deal","txt":"핫딜이니 빨리사요", "img":"./images/pd/010.jpg"},
+        {"num":11, "title":"event sale","txt":"이벤트세일은 꼭사야해", "img":"./images/pd/011.jpg"},
+        {"num":12, "title":"office look","txt":"오피스룩으로 이걸 산다고?", "img":"./images/pd/012.jpg"}
+    ]
+}
+
