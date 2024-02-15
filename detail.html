@@ -56,7 +56,8 @@
 <header>
 <div class="container-max">
     <div class="row">
-        <nav class="top d-flex justify-content-between">
+        <!--nav-->
+        <nav class="top d-md-flex d-none justify-content-between">
             <ul class="nav">
                 <li><a href="#">login</a></li>
                 <li><a href="#">joinus</a>
@@ -100,11 +101,12 @@
                 </li>
             </ul>
         </nav>
-        <h1 class="brand">MY SHOPPING MALL</h1>
+        <!--nav-->
+        <h1 class="brand"><a href="#">MY SHOPPING MALL</a></h1>
       
     </div>
 </div><!--CONTAINER-->
-<nav class="global border-top border-bottom">
+<nav class="global">
     <div class="container-max">
         <div class="row justify-content-between">
             <div class="category">
@@ -173,8 +175,16 @@
                     <img src="images/pd/103.jpg" alt="003">                    
                 </div>  
             </div>
+            <!--상품정보 form-->
             <div class="col-md-6 pl-md-5 pr-list">
-                <h1>여성 정장 세트 
+                <form name="detail-form" method="post">
+                    <input type="hidden" name="title" id="title" value="여성 정장 세트 지그재그 덕다운 롱패딩" /> <!-- 추가 value는 h1 태그-->
+                    <input type="hidden" name="prcode" id="prcode" value="P00103EEA" />
+                    <input type="hidden" name="prprice" id="prprice" value="140000" />
+                    <input type="hidden" name="reserves" id="reserves" value="700" />
+                    <input type="hidden" name="delivery" id="delivery" value="5000" />
+                    <input type="hidden" name="totalprice" id="totalprice" />
+                <h1>여성 정장 세트 지그재그 덕다운 롱패딩
                     <span class="badge badge-primary">hot</span>
                     <span class="badge badge-danger">hot</span>
                 </h1>
@@ -183,49 +193,82 @@
                     <li><label class="title-label">상품코드</label>P00103EEA</li>
                     <li><label class="title-label">판매가</label>150,000원</li>
                     <li><label class="title-label">할인판매가</label>140,000원</li>
-                    <li><label class="title-label">적립금</label>500원 [200,000원 이상 최대 <span>5천원</span> 적립]</li>
+                    <li><label class="title-label">적립금</label>700원 [200,000원 이상 최대 <span>5천원</span> 적립]</li>
                     <li><label class="title-label">배송비</label>5,000원</li>
                     <li class="line colors"><label class="title-label">컬러</label>                        
-                        <input type="radio" name="color" id="black" value="검정">    
+                        <input type="radio" name="color" data-color="0" id="black" data-colorname="검정" value="black">     <!--data color로 값 지정-->
                         <label for="black" class="black"></label>  
-                        <input type="radio" name="color" id="pink" value="핑크">    
+                        <input type="radio" name="color" id="pink" data-color="1000" data-colorname="핑크" value="pink">     <!--data color로 값 지정-->
                         <label for="pink" class="pink"></label> 
-                        <input type="radio" name="color" id="red" value="빨강">    
+                        <input type="radio" name="color" checked id="red" data-color="0" data-colorname="빨강" value="red">      <!--data color로 값 지정-->
                         <label for="red" class="red"></label>    
-                        <input type="radio" name="color" id="blue" value="파랑">    
+                        <input type="radio" name="color" id="blue" data-color="0" data-colorname="파랑" value="blue">     <!--data color로 값 지정-->
                         <label for="blue" class="blue"></label> 
-                        <p class="selected">검정색</p>               
+                        <p class="selected">색상을 선택하세요.</p>               
                     </li>     
                     <li class="line"><label class="title-label">사이즈</label>
-                        <select class="size" name="size">
-                            <option value="m" selected>미디움</option>
-                            <option value="xs">엑스스몰</option>
-                            <option value="S">스몰</option>
-                            <option value="L">라지</option>
-                            <option value="XL">엑스라지</option>
+                        <select class="size" name="size" disabled>
+                            <option value="">사이즈 선택</option> <!--select 후 초기화-->
+                            <option value="m" data-size="0">미디움</option> <!--data-size 0으로 추가비용 입력-->
+                            <option value="xs" data-size="5000">엑스스몰</option> <!--data-size 0으로 추가비용 입력-->
+                            <option value="S" data-size="0">스몰</option>   <!--data-size 0으로 추가비용 입력-->
+                            <option value="L" data-size="0">라지</option> <!--data-size 0으로 추가비용 입력-->
+                            <option value="XL" data-size="5000">엑스라지</option> <!--data-size 0으로 추가비용 입력-->
                         </select>
                     </li> 
-                    <li class="line"><label class="title-label">추가구성</label>
-                        <select>
-                            <option></option>                            
-                        </select>
-                    </li>                
+
+                    <!--  작업 많아져 하고싶음 넣고 지금은 빼겠음
+                        <li class="line"><label class="title-label">추가구성</label>
+                        
+                        </li>                 
+                    -->
+
                 </ul>
+                <!-- 디테일 가격 수량버튼 -->
                 <div class="t-price">
-                    <ul class="add-opt">
-                        <li class="total-text"></li>
-                        <li class="addbox"></li>
+                    <!--
+                        <ul class="add-opt">
+                        <li class="total-text"> 
+
+                        </li>
+                            <li class="addbox d-flex aline-item-center">
+                                <label class="title-label">수량</label>
+                            <div class="input-group mb-3 ml-4">
+                                <div class="input-group-prepend">
+                                    <button class="btn btn-outline-line" id="qdown" type="button">
+                                        <i class="fa-solid fa-chevron-down"></i>
+                                    </button>
+                                </div>
+                                <input type="number" 
+                                    class="quantity" 
+                                    id="quantity" 
+                                    name="quantity" 
+                                    value="1" 
+                                    readonly>
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-line" id="qup" type="button">
+                                            <i class="fa-solid fa-chevron-up"></i>
+                                        </button>
+                                    </div>
+                            </div>  
+                         </li>                              
                         <li class="tomoney"></li>
                     </ul>
+                -->
+                <div class="addquantity">
+                </div>
                     <div class="totalmoney">
-                        총 상품금액(수량) : <strong>123,000원</strong>(1개)
+                        <!-- 총 상품금액(수량) : <strong>123,000원</strong>(1개) -->
                     </div>
                     <div class="btnbox">
-                        <button type="button" class="btn btn-detail">주문하기</button>
-                        <button type="button" class="btn btn-line">ADD TO CART</button>
-                        <button type="button" class="btn btn-line">WISH LIST</button>
+                        <!-- 색상값 폼저장, 색상정보 출력, 사이즈폼 저장, 사이즈정보 출력 ~~~ -->
+                        <button type="button" class="btn btn-detail" disabled><i class="ri-hand-heart-fill"></i>  주문하기</button>
+                        <button type="button" class="btn btn-line btn-left" disabled><i class="ri-shopping-bag-3-line"></i>  ADD TO CART</button>
+                        <button type="button" class="btn btn-line btn-right"><i class="ri-heart-fill"></i>  WISH LIST</button>
                     </div>
                 </div>
+            </form>
+            <!-- /상품정보 form-->
             </div>
         </div>
     </div>
